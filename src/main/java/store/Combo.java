@@ -16,10 +16,13 @@ public class Combo {
     public int applyCombo(Map<String, Integer> cart){
         int count1 = cart.getOrDefault(product1, 0);
         int count2 =cart.getOrDefault(product2, 0);
-        if(combos > 0);
+        int combos = Math.min(count1, count2);
+        if(combos > 0){
         cart.put(product1, count1 - combos);
         cart.put(product2, count2 - combos);
+        }
+        return combos * comboPrice;
     }
-    return combos * comboPrice;
+    
     
 }
